@@ -1,3 +1,2 @@
 # 〽️HEAP STRUCTURE 
-<p><b>Struktur data heap</b> adalah struktur data berbasis binary tree yang lengkap atau disebut dengan complete binary tree. Complete binary tree adalah binary tree yang setiap level(kecuali level paling terakhir) terisi semua dan semua node paling akhir dati kiri secara penuh.</p>
-
+<p><b>Struktur data heap</b> adalah struktur data berbasis binary tree yang lengkap atau disebut dengan complete binary tree. Pada heap setiap node parents akan berelasi secara langsung dengan node child. Seperti halnya pada max-heap: setiap node parent memiliki nilai yang lebih besar ketimbang child node, begitu pula sebaliknya pada min-heap: setiap node parent memiliki nilai kurang dari node child. Struktur data heap umumnya digunakan untuk membangun sistem antrian dengan skala prioritas serta sebagai landasan pada Dijkstra's algorithm.
