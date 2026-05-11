@@ -42,10 +42,13 @@
     }
 ```
 
-<H4>🐍PROGRAM PYTHON</H4>
+
+🐍PROGRAM PYTHON
+
+
 
 ```pyhon
-=============================== maxHeap.py ===================================
+=============================== maxHeap.python ===================================
 def insert(heap, value):
     heap.append(value)
 
@@ -56,7 +59,7 @@ def insert(heap, value):
 
         index = (index - 1) // 2
 
-=============================== Pjheap.py ====================================
+========================= Pjheap.python ==============================
  def _max_heapify(self, i):
         largest = i
         l, r = 2*i + 1, 2*i + 2
@@ -68,6 +71,10 @@ def insert(heap, value):
 ```
 
 
+<h4>Fungsi Min Heap pada Java dan Python</h4>
+
+
+ ☕PROGRAM JAVA
 ```java
 ========================= minHeap.java ============================
   public static void insert(ArrayList<Integer> heap, int value){
@@ -87,4 +94,28 @@ def insert(heap, value):
             idx = (idx - 1) / 2;
         }
     }
+```
+
+
+🐍PROGRAM PYTHON
+```python
+========================= minHeap.pyhton ============================
+def insert(heap, value):
+    heap.append(value)
+    index = len(heap) - 1   
+    while index > 0 and heap[(index - 1)//2] > heap[index]:
+        heap[index], heap[(index - 1)//2] = heap[(index - 1)//2], heap[index]
+
+        index = (index - 1)//2
+
+
+========================= Pjheap.python ==============================
+def _min_heapify(self, i):
+        smallest = i
+        l, r = 2*i + 1, 2*i + 2
+        if l < len(self.min_heap) and self.min_heap[l].id < self.min_heap[smallest].id: smallest = l
+        if r < len(self.min_heap) and self.min_heap[r].id < self.min_heap[smallest].id: smallest = r
+        if smallest != i:
+            self.min_heap[i], self.min_heap[smallest] = self.min_heap[smallest], self.min_heap[i]
+            self._min_heapify(smallest)
 ```
