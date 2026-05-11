@@ -11,3 +11,22 @@
 <li>Child kanan dengan index 2*i+2</li>
 <li>Parent dari node pada index akan dapat ditemukan dengan [(i-1)/2]</li>
 </ul>
+
+<p>Pada projek ini fungsi heap disimpan pada file project:</p>
+maxheap : maxHeap.java
+
+```java
+    public static void insert(ArrayList<Integer> heap, int value){
+        heap.add(value);
+        int index = heap.size() - 1;
+
+        while(index > 0 && heap.get((index-1)/2) < heap.get(index)){
+            int part = heap.get(index);
+            heap.set(index, heap.get((index-1)/2));
+            heap.set((index-1)/2, part);
+
+
+            index = (index - 1) / 2;
+        }
+    }
+```
