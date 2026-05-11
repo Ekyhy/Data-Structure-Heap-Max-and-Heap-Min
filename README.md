@@ -12,10 +12,11 @@
 <li>Parent dari node pada index akan dapat ditemukan dengan [(i-1)/2]</li>
 </ul>
 
-<p>Pada projek ini fungsi heap disimpan pada file project:</p>
-maxheap : maxHeap.java
+<p>Pada projek ini fungsi heap disimpan pada file project:
+</p>
 
 ```java
+========================= maxHeap.java ============================
     public static void insert(ArrayList<Integer> heap, int value){
         heap.add(value);
         int index = heap.size() - 1;
@@ -27,6 +28,36 @@ maxheap : maxHeap.java
 
 
             index = (index - 1) / 2;
+        }
+    }
+========================= MainApp.java ============================
+    private void bubbleUpMax(int idx) {
+        while (idx > 0 && maxHeap.get(idx).id > maxHeap.get((idx - 1) / 2).id) {
+            Collections.swap(maxHeap, idx, (idx - 1) / 2);
+            idx = (idx - 1) / 2;
+        }
+    }
+```
+
+
+
+```java
+========================= minHeap.java ============================
+  public static void insert(ArrayList<Integer> heap, int value){
+        heap.add(value);
+        int index = heap.size() - 1;
+        while (index > 0 && heap.get((index - 1) /2) > heap.get(index)) {
+            int part = heap.get(index);
+            heap.set(index, heap.get((index - 1)/2));
+            heap.set((index - 1) / 2, part);
+            index = (index - 1)/2;
+        }
+    }
+========================= MainApp.java ==============================
+    private void bubbleUpMin(int idx) {
+        while (idx > 0 && minHeap.get(idx).id < minHeap.get((idx - 1) / 2).id) {
+            Collections.swap(minHeap, idx, (idx - 1) / 2);
+            idx = (idx - 1) / 2;
         }
     }
 ```
