@@ -15,6 +15,9 @@
 <p>Pada projek ini fungsi heap disimpan pada file project:
 </p>
 
+<h4>Fungsi Max Heap pada Java dan Python</h4>
+
+ ☕PROGRAM JAVA
 ```java
 ========================= maxHeap.java ============================
     public static void insert(ArrayList<Integer> heap, int value){
@@ -39,6 +42,30 @@
     }
 ```
 
+<H4>🐍PROGRAM PYTHON</H4>
+
+```pyhon
+=============================== maxHeap.py ===================================
+def insert(heap, value):
+    heap.append(value)
+
+    index = len(heap)-1
+
+    while index > 0 and heap[(index - 1) // 2] < heap[index]:
+        heap[index], heap[(index - 1) // 2] = heap[(index - 1)//2], heap[index]
+
+        index = (index - 1) // 2
+
+=============================== Pjheap.py ====================================
+ def _max_heapify(self, i):
+        largest = i
+        l, r = 2*i + 1, 2*i + 2
+        if l < len(self.max_heap) and self.max_heap[l].id > self.max_heap[largest].id: largest = l
+        if r < len(self.max_heap) and self.max_heap[r].id > self.max_heap[largest].id: largest = r
+        if largest != i:
+            self.max_heap[i], self.max_heap[largest] = self.max_heap[largest], self.max_heap[i]
+            self._max_heapify(largest)
+```
 
 
 ```java
